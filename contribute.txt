@@ -1,0 +1,53 @@
+# Iniciar o projeto
+composer install
+php artisan migrate
+php artisan serve --port=4000
+
+# Para refrescar a BD 
+php artisan migrate:fresh
+
+# Criar migração
+php artisan make:migration create_<nome_tabela>_table
+
+# Criar model
+php artisan make:model <Nome_tabela>
+
+# Criar factory
+php artisan make:factory <Nome_factory>Factory --model=<Nome_model>
+
+# Criar seeder
+php artisan make:seeder <Nome_seeder>Seeder
+
+# Executar seeder
+php artisan db:seed --class=<Nome_seeder>
+
+# Criar middlware
+php artisan make:middleware <nome_middlware>
+'<nome_middleware>' => \App\Http\Middleware\<nome_middlware>::class - Adicionar no Kernel.php
+
+# Query String Options
+page_size : numero de items por pagina
+page : página que pretendes ver
+id : id do item que pretendes pesquisar
+name : nome do item que pretendes pesquisar 
+
+# Rotas LANGUAGES
+GET /languages - Listar todas as linguagens
+POST /languages - Criar uma nova linguagem
+GET /languages/{id} - Exibir os detalhes de uma linguagem específica
+PUT /languages/{id} - Atualizar uma linguagem específica
+DELETE /languages/{id} - Excluir uma linguagem específica
+
+# Rotas CATEGORIES
+GET /categories - Listar todas as categorias
+POST /categories - Criar uma nova categoria
+GET /categories/{id} - Exibir os detalhes de uma categoria específica
+PUT /categories/{id} - Atualizar uma categoria específica
+DELETE /categories/{id} - Excluir uma categoria específica
+
+# Rotas QUESTIONS
+GET /questions - Listar todas as questão
+POST /questions - Criar uma nova questão
+GET /questions/{id} - Exibir os detalhes de uma questão específica
+PUT /questions/{id} - Atualizar uma questão específica
+DELETE /questions/{id} - Excluir uma questão específica
